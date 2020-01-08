@@ -1,13 +1,4 @@
-class Person{
-    constructor(id, name, age){
-        this.name = name;
-        this.age = age;
-        this.id = id;
-    }
-    introduce(){
-        return `My name is ${this.name}. I'm ${this.age} years old.`;
-    }
-}
+import Person from "../../main/practice_8/person.js";
 
 class Teacher extends Person{
     constructor(id, name, age, klass){
@@ -16,9 +7,11 @@ class Teacher extends Person{
     }
     introduce(){
         if(this.klass){
-            return super.introduce()+' '+`I'm a Teacher. I teach Class ${this.klass.number}.`;}
+            return super.introduce()+' '+`I am a Teacher. I teach Class ${this.klass.number}.`;}
         else{
-            return super.introduce()+' '+`I'm a Teacher. I teach No Class.`;
+            return super.introduce()+' '+`I am a Teacher. I teach No Class.`;
         }
     }
 }
+
+export default Teacher;

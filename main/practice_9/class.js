@@ -7,14 +7,16 @@ class Class{
             this.leader = student;
         }
         else{
-            return "It is not one of us.";
+            console.log("It is not one of us.");
         }
     }
     getDisplayName(){
         return `Class ${this.number}`
     }
     appendMember(student){
-        student.klass.number = this.number;
+        student.klass = this;
     }
 }
+
+export default Class;
 

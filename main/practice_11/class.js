@@ -4,22 +4,25 @@ class Class{
     }
     assignLeader(student){
         if(student.klass.number===this.number){
-            this.leader = this.student;
+            this.leader = student;
             if(this.listener&&this.listener.isTeaching(student)){
-                return `I am ${this.listener.name}. I know ${student.name} become Leader of Class ${this.number}.`
+                console.log(`I am ${this.listener.name}. I know ${student.name} become Leader of Class ${this.number}.`);
             }
         }
         else{
-            return "It is not one of us.";
+            console.log("It is not one of us.");
         }
     }
     appendMember(student){
-        student.klass.number = this.number;
+        student.klass = this;
         if(this.listener&&this.listener.isTeaching(student)){
-            return `I am ${this.listener.name}. I know ${student.name} has joined Class ${this.number}.`
+            console.log(`I am ${this.listener.name}. I know ${student.name} has joined Class ${this.number}.`);
         }
     }
     registerAssignLeaderListener(teacher){
+        this.listener = teacher;
+    }
+    registerJoinListener(teacher){
         this.listener = teacher;
     }
     getDisplayName(){
@@ -34,3 +37,5 @@ class Class{
         }
     }
 }
+
+export default Class;

@@ -4,16 +4,18 @@ class Person{
         this.age = age;
     }
     introduce(){
-        return `My name is ${this.name}. I'm ${this.age} years old.`
+        return `My name is ${this.name}. I am ${this.age} years old.`
     }
 }
 
 class Student extends Person{
-    constructor(name, age, classes){
+    constructor(name, age, klass){
         super(name, age);
-        this.classes = classes
+        this.klass = klass;
     }
     introduce(){
-        return `I'm a student. I'm at Class ${this.classes}.`
+        return `I am a Student. I am at Class ${this.klass}.`
     }
 }
+
+export default Student;

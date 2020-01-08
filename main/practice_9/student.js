@@ -1,34 +1,4 @@
-
-class Person{
-    constructor(id, name, age){
-        this.name = name;
-        this.age = age;
-        this.id = id;
-    }
-    introduce(){
-        return `My name is ${this.name}. I'm ${this.age} years old.`;
-    }
-}
-
-class Class{
-    constructor(number){
-        this.number = number;
-    }
-    assignLeader(student){
-        if(student.klass.number===this.number){
-            this.leader = student;
-        }
-        else{
-            return "It is not one of us.";
-        }
-    }
-    getDisplayName(){
-        return `Class ${this.number}`
-    }
-    appendMember(student){
-        student.klass.number = this.number;
-    }
-}
+import Person from "../../main/practice_9/person.js";
 
 class Student extends Person{
     constructor(id, name, age, klass){
@@ -37,11 +7,12 @@ class Student extends Person{
     }
     introduce(){
         if(this.klass.leader&&this.klass.leader.id===this.id){
-            return super.introduce()+' '+`I'm a Student. I'm Leader of Class ${klass.number}.`;
+            return super.introduce()+' '+`I am a Student. I am Leader of Class ${this.klass.number}.`;
         }
         else{
-            return super.introduce()+' '+`I'm a Student. I'm at Class ${klass.number}.`;
+            return super.introduce()+' '+`I am a Student. I am at Class ${this.klass.number}.`;
         }
     }
 }
 
+export default Student;
